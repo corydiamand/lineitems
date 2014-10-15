@@ -33,13 +33,19 @@ group :doc do
 end
 
 group :development, :test do
+	#add rspec for testing
 	gem 'rspec-rails', '~> 3.0.0'
 end
 
 group :development do
+	 #guard to run rspec on changes to the code
 	 gem 'guard-rspec', require: false
+	 #annotate to see all model attributes
 	 gem 'annotate'
 end
+
+#twitter bootstrap to get a ui up quickly
+gem "twitter-bootstrap-rails"
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.1.2'
