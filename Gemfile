@@ -1,5 +1,8 @@
 source 'https://rubygems.org'
 
+#set ruby verison for heroku
+ruby '2.0.0'
+
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.0.3'
 
@@ -32,6 +35,10 @@ group :doc do
   gem 'sdoc', require: false
 end
 
+group :production do
+	gem 'rails_12factor'
+end
+
 group :development, :test do
 	#add rspec for testing
 	gem 'rspec-rails', '~> 3.0.0'
@@ -46,6 +53,9 @@ end
 
 #twitter bootstrap to get a ui up quickly
 gem "twitter-bootstrap-rails"
+
+#add stripe for credit card billing
+gem 'stripe', :git => 'https://github.com/stripe/stripe-ruby'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.1.2'
