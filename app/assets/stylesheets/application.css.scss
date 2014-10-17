@@ -11,3 +11,13 @@
  *= require_self
  *= require_tree .
  */
+@import "bootstrap-sprockets";
+@import "bootstrap";
+
+
+.logo-image {
+	float:left;
+	color:green;
+	margin-top: 17px;
+	margin-right:10px
+}

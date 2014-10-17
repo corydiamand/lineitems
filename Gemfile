@@ -52,7 +52,10 @@ group :development do
 end
 
 #twitter bootstrap to get a ui up quickly
-gem "twitter-bootstrap-rails"
+gem 'bootstrap-sass', '~> 3.2.0'
+
+#for adding vendor prefixes
+gem 'autoprefixer-rails'
 
 #add stripe for credit card billing
 gem 'stripe', :git => 'https://github.com/stripe/stripe-ruby'
