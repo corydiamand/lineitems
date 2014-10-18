@@ -1,37 +1,40 @@
-<h1>Listing clients</h1>
+<div class="row">
+  <%= render "sidebar" %>
+  <h1>Listing clients</h1>
 
-<table>
-  <thead>
-    <tr>
-      <th>First name</th>
-      <th>Last name</th>
-      <th>Address</th>
-      <th>Monthly fee</th>
-      <th>Tax</th>
-      <th>Charge date</th>
-      <th></th>
-      <th></th>
-      <th></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @clients.each do |client| %>
+  <table>
+    <thead>
       <tr>
-        <td><%= client.first_name %></td>
-        <td><%= client.last_name %></td>
-        <td><%= client.address %></td>
-        <td><%= client.monthly_fee %></td>
-        <td><%= client.tax %></td>
-        <td><%= client.charge_date %></td>
-        <td><%= link_to 'Show', client %></td>
-        <td><%= link_to 'Edit', edit_client_path(client) %></td>
-        <td><%= link_to 'Destroy', client, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <th>First name</th>
+        <th>Last name</th>
+        <th>Address</th>
+        <th>Monthly fee</th>
+        <th>Tax</th>
+        <th>Charge date</th>
+        <th></th>
+        <th></th>
+        <th></th>
       </tr>
-    <% end %>
-  </tbody>
-</table>
+    </thead>
 
-<br>
+    <tbody>
+      <% @clients.each do |client| %>
+        <tr>
+          <td><%= client.first_name %></td>
+          <td><%= client.last_name %></td>
+          <td><%= client.address %></td>
+          <td><%= client.monthly_fee %></td>
+          <td><%= client.tax %></td>
+          <td><%= client.charge_date %></td>
+          <td><%= link_to 'Show', client %></td>
+          <td><%= link_to 'Edit', edit_client_path(client) %></td>
+          <td><%= link_to 'Destroy', client, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
 
-<%= link_to 'New Client', new_client_path %>
+  <br>
+
+  <%= link_to 'New Client', new_client_path %>
+</div>

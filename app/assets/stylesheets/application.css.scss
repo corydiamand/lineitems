@@ -14,10 +14,33 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
+$font-stack: "Helvetica Neue",Helvetica,"pragmatica-web",Arial,sans-serif;
+
+
+body{
+	font: $font-stack;
+}
+
+.home-text{
+
+}
 
 .logo-image {
 	float:left;
 	color:green;
 	margin-top: 17px;
 	margin-right:10px
+}
+
+#sidebar{
+	background-image:url("./5.jpg");
+}
+
+#sidebar-footer{
+
+}
+
+.column {
+height: 100%;
+overflow: auto;
 }
