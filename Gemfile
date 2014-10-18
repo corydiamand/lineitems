@@ -62,6 +62,9 @@ gem 'autoprefixer-rails'
 #add stripe for credit card billing
 gem 'stripe', :git => 'https://github.com/stripe/stripe-ruby'
 
+#add devise for admin authentication
+gem 'devise'
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.1.2'
 
