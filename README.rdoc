@@ -11,6 +11,9 @@ Things you may want to cover:
 
 * Configuration
 Creating an admin - 
+run rails console
+Admin.create({:email => "email@email.com", :password => "password", :password_confirmation => "password}).save
+
 
 * Database creation
 

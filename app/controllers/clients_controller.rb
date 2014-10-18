@@ -1,5 +1,10 @@
 class ClientsController < ApplicationController
+  before_action :authenticate_admin!, except: [:home]
   before_action :set_client, only: [:show, :edit, :update, :destroy]
+
+  #test coverage to make sure admin can only access certain methdos
+  def home
+  end
 
   # GET /clients
   # GET /clients.json

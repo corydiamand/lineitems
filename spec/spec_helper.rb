@@ -15,16 +15,19 @@
 #
 # See http://rubydoc.info/gems/rspec-core/RSpec/Core/Configuration
 require 'factory_girl_rails'
-
+require 'devise'
 
 RSpec.configure do |config|
 
 #main factory girl configuration
   config.include FactoryGirl::Syntax::Methods
-# additional factory_girl configuration
+#additional factory_girl configuration
   config.before(:suite) do
     FactoryGirl.lint
   end
+
+#devise main configuration
+config.include Devise::TestHelpers, type: :controller
 
 # The settings below are suggested to provide a good initial experience
 # with RSpec, but feel free to customize to your heart's content.
