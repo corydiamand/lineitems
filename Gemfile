@@ -42,6 +42,8 @@ end
 group :development, :test do
 	#add rspec for testing
 	gem 'rspec-rails', '~> 3.0.0'
+	#factory girl for fixtures
+	gem 'factory_girl_rails'
 end
 
 group :development do
