@@ -16,13 +16,14 @@
 
 $font-stack: "Helvetica Neue",Helvetica,"pragmatica-web",Arial,sans-serif;
 
-
-body{
-	font: $font-stack;
+/* html and body height is 100% so that the home background image is full screen */
+html{
+	height: 100%;
 }
 
-.home-text{
-
+body{
+	height: 100%;
+	font: $font-stack;
 }
 
 .logo-image {
@@ -43,4 +44,48 @@ body{
 .column {
 height: 100%;
 overflow: auto;
+}
+
+.home-container{
+	height:85%;
+	background-image:url("./laptop_notebook.jpg");
+}
+
+.home-navbar{
+	background: rgba(255, 255, 255, 0);
+	color:white;
+	border: none;
+
+	.navbar-brand{
+		font-size:28px;
+	}
+
+	a{
+		color:white !important;
+	}
+
+	.icon-bar{
+		background-color:white !important;
+	}
+
+	.navbar-collapse{
+		border:none;
+		box-shadow:none;
+
+	    a{
+			border: white;
+		}
+	}
+}
+
+.home-slogan{
+	color:white;
+	background: none !important;
+}
+
+.home-footer{
+	background-color:white;
+	height:10%;
+	color: #676769;
+	margin-top: 26px;
 }
