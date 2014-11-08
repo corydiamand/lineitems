@@ -30,6 +30,16 @@ RSpec.describe Client, :type => :model do
   		it "is invalid without a last name" do
   			expect(FactoryGirl.build(:client, last_name: nil)).to_not be_valid
   		end
+
+      it "returns a first name" do
+        client = FactoryGirl.build(:client)
+        expect(client.first_name).to eq("John")
+      end
+
+      it "returns a last name" do
+        client = FactoryGirl.build(:client)
+        expect(client.last_name).to eq("Doe")
+      end
   	end
 
 end
