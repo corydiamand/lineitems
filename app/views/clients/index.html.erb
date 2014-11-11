@@ -1,77 +1,57 @@
-  <div class="row row-offcanvas row-offcanvas-left offcanvas-height">
-    <div class="col-xs-6 col-sm-3 sidebar-offcanvas offcanvas-height" id="sidebar" role="navigation">
-      <div class="toggle-nav-panel">
-          <p class="pull-left">
-            <button type="button" class="btn btn-primary btn-xs" data-toggle="offcanvas">Toggle nav</button>
-          </p>
+
+  <div class="container dashboard-container">
+    <div class="navbar navbar-default navbar-fixed-top content-navbar-right">      
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <span class="glyphicon glyphicon-list logo-image"></span><a class="navbar-brand" href="#">Line Items</a>
       </div>
-      <div class="list-group sidebar-links">
-        <div class="sidebar-link">
-          <ul>
-            <li><a href="#" class="">Link</a></li>
-            <li><a href="#" class="">Link</a></li>
-          </ul>
-        </div>
-      </div>
-    </div><!--/span-->
 
 
-    <div class="col-sm-9 content-right">
-    <div class="container">
-      <div class="navbar navbar-default navbar-fixed-top content-navbar-right">      
-        <div class="navbar-header">
-          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-          <span class="glyphicon glyphicon-list logo-image"></span><a class="navbar-brand" href="#">Line Items</a>
-        </div>
-
-
-        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-          <ul class="nav navbar-nav">
-            <li class="active"><%= link_to "Home", root_path %></li>
-            <li><%= link_to "Admin", clients_path %></li>
-          </ul>
-        </div>
-        </div>
+      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+        <ul class="nav navbar-nav">
+          <li class="active"><%= link_to "Home", root_path %></li>
+          <li><%= link_to "Admin", clients_path %></li>
+        </ul>
       </div>
     </div>
 
-        <h1>Listing clients</h1>
-        <table>
-          <thead>
-            <tr>
-              <th>First name</th>
-              <th>Last name</th>
-              <th>Address</th>
-              <th>Monthly fee</th>
-              <th>Tax</th>
-              <th>Charge date</th>
-              <th></th>
-              <th></th>
-              <th></th>
-            </tr>
-          </thead>
+    <h1>Listing clients</h1>
+    <table>
+      <thead>
+        <tr>
+          <th>First name</th>
+          <th>Last name</th>
+          <th>Address</th>
+          <th>Monthly fee</th>
+          <th>Tax</th>
+          <th>Charge date</th>
+          <th></th>
+          <th></th>
+          <th></th>
+        </tr>
+      </thead>
 
-          <tbody>
-            <% @clients.each do |client| %>
-              <tr>
-                <td><%= client.first_name %></td>
-                <td><%= client.last_name %></td>
-                <td><%= client.address %></td>
-                <td><%= client.monthly_fee %></td>
-                <td><%= client.tax %></td>
-                <td><%= client.charge_date %></td>
-                <td><%= link_to 'Show', client %></td>
-                <td><%= link_to 'Edit', edit_client_path(client) %></td>
-                <td><%= link_to 'Destroy', client, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-              </tr>
-            <% end %>
-          </tbody>
-        </table>
-        <br>
-        <%= link_to 'New Client', new_client_path %>
-    </div>
-  </div>
+      <tbody>
+        <% @clients.each do |client| %>
+          <tr>
+            <td><%= client.first_name %></td>
+            <td><%= client.last_name %></td>
+            <td><%= client.address %></td>
+            <td><%= client.monthly_fee %></td>
+            <td><%= client.tax %></td>
+            <td><%= client.charge_date %></td>
+            <td><%= link_to 'Show', client %></td>
+            <td><%= link_to 'Edit', edit_client_path(client) %></td>
+            <td><%= link_to 'Destroy', client, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+    <br>
+    <%= link_to 'New Client', new_client_path %>
+</div>
+
