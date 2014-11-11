@@ -40,6 +40,22 @@ RSpec.describe Client, :type => :model do
         client = FactoryGirl.build(:client)
         expect(client.last_name).to eq("Doe")
       end
+
+      it "has an address attribute" do
+        client = FactoryGirl.build(:client)
+        expect(client.attributes.has_key?("address")).to eq(true)
+      end
+
+      it "has a monthly_fee attribute" do
+        client = FactoryGirl.build(:client)
+        expect(client.attributes.has_key?("monthly_fee")).to eq(true)
+      end
+
+      it "has a tax attribute" do
+        client = FactoryGirl.build(:client)
+        expect(client.attributes.has_key?("tax")).to eq(true)
+      end
+
   	end
 
 end
