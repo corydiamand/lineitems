@@ -10,6 +10,7 @@ RSpec.describe "clients/index", :type => :view do
         :address => "Address",
         :monthly_fee => "9.99",
         :tax => "9.98",
+        :charge_date =>"11/11/11",
         :permalink => "permalink123"
       ),
       create(
@@ -19,6 +20,7 @@ RSpec.describe "clients/index", :type => :view do
         :address => "Address",
         :monthly_fee => "9.99",
         :tax => "9.98",
+        :charge_date =>"11/11/11",
         :permalink => "permalink123"
       )
     ])
@@ -32,6 +34,7 @@ RSpec.describe "clients/index", :type => :view do
     assert_select "tr>td", :text => "Address".to_s, :count => 2
     assert_select "tr>td", :text => "9.99".to_s, :count => 2
     assert_select "tr>td", :text => "9.98".to_s, :count => 2
+    assert_select "tr>td", :text => "11-11-11".to_s, :count => 2
     assert_select "tr>td", :text => "permalink123".to_s, :count => 2
   end
 end

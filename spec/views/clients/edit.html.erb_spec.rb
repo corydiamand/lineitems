@@ -7,7 +7,9 @@ RSpec.describe "clients/edit", :type => :view do
       :last_name => "MyString",
       :address => "MyString",
       :monthly_fee => "9.99",
-      :tax => "9.99"
+      :tax => "9.99",
+      :charge_date => "11-11-11",
+      :permalink => "permalink123"
     ))
   end
 
@@ -25,6 +27,11 @@ RSpec.describe "clients/edit", :type => :view do
       assert_select "input#client_monthly_fee[name=?]", "client[monthly_fee]"
 
       assert_select "input#client_tax[name=?]", "client[tax]"
+
+      #checking all 3 parts of charge_date select
+      assert_select "select#client_charge_date_1i[name=?]", "client[charge_date(1i)]"
+      assert_select "select#client_charge_date_2i[name=?]", "client[charge_date(2i)]"
+      assert_select "select#client_charge_date_3i[name=?]", "client[charge_date(3i)]"
 
       assert_select "input#client_permalink[name=?]", "client[permalink]"
     end

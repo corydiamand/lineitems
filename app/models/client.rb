@@ -16,4 +16,5 @@
 
 class Client < ActiveRecord::Base
 	validates :first_name, :last_name, presence: true
+	validates :permalink, uniqueness: true
 end

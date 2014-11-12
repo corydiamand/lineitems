@@ -8,6 +8,7 @@ RSpec.describe "clients/show", :type => :view do
       :address => "Address",
       :monthly_fee => "9.99",
       :tax => "9.99",
+      :charge_date =>"11-11-11",
       :permalink => "permalink123"
     ))
   end
@@ -19,6 +20,7 @@ RSpec.describe "clients/show", :type => :view do
     expect(rendered).to match(/Address/)
     expect(rendered).to match(/9.99/)
     expect(rendered).to match(/9.99/)
+    expect(rendered).to match(/11-11-11/)
     expect(rendered).to match(/permalink123/)
   end
 end

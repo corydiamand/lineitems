@@ -32,6 +32,11 @@ RSpec.describe Client, :type => :model do
   			expect(FactoryGirl.build(:client, last_name: nil)).to_not be_valid
   		end
 
+      it "validates permalink uniqueness" do
+        FactoryGirl.create(:client, permalink: "permalink123")
+        expect(FactoryGirl.build(:client, permalink: "permalink123")).to_not be_valid
+      end
+
       it "returns a first name" do
         client = FactoryGirl.build(:client)
         expect(client.first_name).to eq("John")
@@ -55,6 +60,11 @@ RSpec.describe Client, :type => :model do
       it "has a tax attribute" do
         client = FactoryGirl.build(:client)
         expect(client.attributes.has_key?("tax")).to eq(true)
+      end
+
+      it "has a charge date" do
+        client = FactoryGirl.build(:client)
+        expect(client.attributes.has_key?("charge_date")).to eq(true)
       end
 
       it "has a permalink attribute" do
