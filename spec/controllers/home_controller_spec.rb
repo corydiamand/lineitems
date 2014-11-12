@@ -1,4 +1,5 @@
 require 'rails_helper'
+include ControllerMacros
 
 RSpec.describe HomeController, :type => :controller do
 

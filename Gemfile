@@ -53,6 +53,11 @@ group :development do
 	 gem 'annotate'
 end
 
+group :test do
+	#cleaning the rspec database between tests
+	gem 'database_cleaner'
+end
+
 #twitter bootstrap to get a ui up quickly
 gem 'bootstrap-sass', '~> 3.2.0'
 
