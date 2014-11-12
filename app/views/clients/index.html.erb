@@ -28,7 +28,7 @@
         <th>Monthly fee</th>
         <th>Tax</th>
         <th>Charge date</th>
-        <th></th>
+        <th>Permalink</th>
         <th></th>
         <th></th>
       </tr>
@@ -43,6 +43,7 @@
           <td><%= client.monthly_fee %></td>
           <td><%= client.tax %></td>
           <td><%= client.charge_date %></td>
+          <td><%= client.permalink %></td>
           <td><%= link_to 'Show', client %></td>
           <td><%= link_to 'Edit', edit_client_path(client) %></td>
           <td><%= link_to 'Destroy', client, method: :delete, data: { confirm: 'Are you sure?' } %></td>

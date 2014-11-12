@@ -26,7 +26,7 @@ RSpec.describe "clients/edit", :type => :view do
 
       assert_select "input#client_tax[name=?]", "client[tax]"
 
-      assert_select "input#permalink[name=?]", "client[permalink]"
+      assert_select "input#client_permalink[name=?]", "client[permalink]"
     end
   end
 end

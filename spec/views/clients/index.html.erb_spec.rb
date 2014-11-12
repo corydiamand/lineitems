@@ -3,7 +3,8 @@ require 'rails_helper'
 RSpec.describe "clients/index", :type => :view do
   before(:each) do
     assign(:clients, [
-      Client.create!(
+      create(
+        :client,
         :first_name => "First Name",
         :last_name => "Last Name",
         :address => "Address",
@@ -11,7 +12,8 @@ RSpec.describe "clients/index", :type => :view do
         :tax => "9.98",
         :permalink => "permalink123"
       ),
-      Client.create!(
+      create(
+        :client,
         :first_name => "First Name",
         :last_name => "Last Name",
         :address => "Address",
@@ -23,6 +25,7 @@ RSpec.describe "clients/index", :type => :view do
   end
 
   it "renders a list of clients" do
+    puts Client.all
     render
     assert_select "tr>td", :text => "First Name".to_s, :count => 2
     assert_select "tr>td", :text => "Last Name".to_s, :count => 2

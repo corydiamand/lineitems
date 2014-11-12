@@ -5,8 +5,8 @@ Warden.test_mode!
 
 RSpec.describe "Clients", :type => :request do
 
-	user = FactoryGirl.create(:admin)
-	login_as(user, :scope => :admin)
+	admin = FactoryGirl.create(:admin, :email => "rando123@rando.com")
+	login_as(admin, :scope => :admin)
 
 	describe "GET /clients" do
 		it "works! (now write some real specs)" do
