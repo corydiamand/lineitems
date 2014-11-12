@@ -11,6 +11,7 @@
 #  charge_date :date
 #  created_at  :datetime
 #  updated_at  :datetime
+#  permalink   :string(255)
 #
 
 require 'rails_helper'
