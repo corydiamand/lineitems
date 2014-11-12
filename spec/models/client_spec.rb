@@ -56,6 +56,11 @@ RSpec.describe Client, :type => :model do
         expect(client.attributes.has_key?("tax")).to eq(true)
       end
 
+      it "has a permalink attribute" do
+        client = FactoryGirl.build(:client)
+        expect(client.attributes.has_key?("permalink")).to eq(true)
+      end
+
   	end
 
 end
