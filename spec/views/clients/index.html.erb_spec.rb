@@ -29,7 +29,6 @@ RSpec.describe "clients/index", :type => :view do
   end
 
   it "renders a list of clients" do
-    puts Client.all.inspect
     render
     assert_select "tr>td", :text => "First Name".to_s, :count => 2
     assert_select "tr>td", :text => "Last Name".to_s, :count => 2
