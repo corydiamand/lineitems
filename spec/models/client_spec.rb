@@ -38,6 +38,13 @@ RSpec.describe Client, :type => :model do
       end
   	end
 
+    context 'initializations' do
+      it "sets page_visible to false by default" do
+        client = FactoryGirl.build(:client)
+        expect(client.page_visible).to eq(false)
+      end
+    end
+
     context 'methods' do
       it "returns a first name" do
         client = FactoryGirl.build(:client)

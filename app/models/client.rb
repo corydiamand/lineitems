@@ -17,4 +17,5 @@
 class Client < ActiveRecord::Base
 	validates :first_name, :last_name, presence: true
 	validates :permalink, uniqueness: {allow_blank: true}
+	after_initialize 'self.page_visible ||= false'
 end
