@@ -9,7 +9,8 @@ RSpec.describe "clients/new", :type => :view do
       :monthly_fee => "9.99",
       :tax => "9.99",
       :charge_date => "11-11-11",
-      :permalink => "permalink123"
+      :permalink => "permalink123",
+      :page_visible => true
     ))
   end
 
@@ -34,6 +35,9 @@ RSpec.describe "clients/new", :type => :view do
       assert_select "select#client_charge_date_3i[name=?]", "client[charge_date(3i)]"
 
       assert_select "input#client_permalink[name=?]", "client[permalink]"
+
+      assert_select "input#client_page_visible[name=?]", "client[page_visible]"
+
     end
   end
 end

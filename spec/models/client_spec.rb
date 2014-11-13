@@ -36,7 +36,9 @@ RSpec.describe Client, :type => :model do
         FactoryGirl.create(:client, permalink: "permalink123")
         expect(FactoryGirl.build(:client, permalink: "permalink123")).to_not be_valid
       end
+  	end
 
+    context 'methods' do
       it "returns a first name" do
         client = FactoryGirl.build(:client)
         expect(client.first_name).to eq("John")
@@ -46,7 +48,9 @@ RSpec.describe Client, :type => :model do
         client = FactoryGirl.build(:client)
         expect(client.last_name).to eq("Doe")
       end
+    end
 
+    context 'attributes' do
       it "has an address attribute" do
         client = FactoryGirl.build(:client)
         expect(client.attributes.has_key?("address")).to eq(true)
@@ -72,6 +76,10 @@ RSpec.describe Client, :type => :model do
         expect(client.attributes.has_key?("permalink")).to eq(true)
       end
 
-  	end
+      it "has a page_visible attribute" do
+        client = FactoryGirl.build(:client)
+        expect(client.attributes.has_key?("page_visible")).to eq(true)
+      end
+    end
 
 end

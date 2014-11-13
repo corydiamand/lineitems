@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141112175117) do
+ActiveRecord::Schema.define(version: 20141112213431) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -44,6 +44,7 @@ ActiveRecord::Schema.define(version: 20141112175117) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "permalink"
+    t.boolean  "page_visible"
   end
 
 end
