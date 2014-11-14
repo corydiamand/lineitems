@@ -55,7 +55,7 @@ end
 
 group :test do
 	#cleaning the rspec database between tests
-	gem 'database_cleaner'
+	gem 'database_cleaner', git: 'git@github.com:bmabey/database_cleaner.git'
 end
 
 #twitter bootstrap to get a ui up quickly
