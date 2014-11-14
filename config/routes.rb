@@ -1,7 +1,9 @@
 Lineitems::Application.routes.draw do
   get "home/index"
+
+  get "invoices/:permalink" => 'invoices#show'
   devise_for :admins
-  resources :clients
+    resources :clients
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
