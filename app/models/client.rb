@@ -28,7 +28,7 @@ class Client < ActiveRecord::Base
 
 		def permalink_not_id
 			#regex checks if permalink contains only numbers
-			if (self.permalink !~ /\D/) == true && self.permalink != nil
+			if (self.permalink != nil) && /\A[-+]?\d+\z/ === self.permalink 
 				errors.add(:permalink, "permalink can't be just numbers, add a letter")
 			end
 		end

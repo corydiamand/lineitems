@@ -5,15 +5,18 @@ Warden.test_mode!
 
 RSpec.describe "Clients", :type => :request do
 
-	admin = FactoryGirl.create(:admin)
 
 	describe "GET /clients" do
 
+		before :each do
+			admin = FactoryGirl.create(:admin)
+			post_via_redirect admin_session_path, 'admin[email]' => admin.email, 'admin[password]' => admin.password
+		end
+
 		it "works! (now write some real specs)" do
-			pending
 			get clients_path
-			expect(response.status).to eq(200)
-			#expect(response.status).to eq(302)
+			expect(subject).to render_template(:index)
+			#expect(response.status).to eq(200)
 		end
 	end
 
