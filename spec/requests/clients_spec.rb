@@ -5,7 +5,7 @@ Warden.test_mode!
 
 RSpec.describe "Clients", :type => :request do
 
-	admin = FactoryGirl.create(:admin, :email => "rando123@rando.com")
+	admin = FactoryGirl.create(:admin)
 
 	describe "GET /clients" do
 
