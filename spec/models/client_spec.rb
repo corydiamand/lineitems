@@ -36,12 +36,21 @@ RSpec.describe Client, :type => :model do
         FactoryGirl.create(:client, permalink: "permalink123")
         expect(FactoryGirl.build(:client, permalink: "permalink123")).to_not be_valid
       end
+
+      it "validates permalink cannot be equal any user id" do
+        expect(FactoryGirl.build(:client, permalink: "1")).to_not be_valid
+      end
   	end
 
     context 'initializations' do
       it "sets page_visible to false by default" do
         client = FactoryGirl.build(:client)
         expect(client.page_visible).to eq(false)
+      end
+
+      it "sets permalink to nil by default" do
+        client = FactoryGirl.build(:client)
+        expect(client.permalink).to eq(nil)
       end
     end
 
