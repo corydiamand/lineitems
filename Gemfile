@@ -70,6 +70,9 @@ gem 'stripe', :git => 'https://github.com/stripe/stripe-ruby'
 #add devise for admin authentication
 gem 'devise'
 
+#add figaro for handling environment variables
+gem "figaro"
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.1.2'
 
