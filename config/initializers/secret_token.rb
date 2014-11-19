@@ -9,4 +9,4 @@
 
 # Make sure your secret_key_base is kept private
 # if you're sharing your code publicly.
-Lineitems::Application.config.secret_key_base = '5bdce2b2bfddd4188421f638718f0dbbb3af033011896ac03dfae5b482921923886e6e2341dde2814791846c491ff8170eed288f560ff809b156444ed2fdacfd'
+Lineitems::Application.config.secret_key_base = ENV["secret_key_base"]
